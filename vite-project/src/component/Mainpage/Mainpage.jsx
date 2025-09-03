@@ -7,6 +7,7 @@ import Advisors from '../Header/Advisors/Advisors';
 import Footer from '../Footer/Footer';
 // import Cover from '../Cover/Cover';
 import { useNavigate } from "react-router-dom";
+import ReasultSearch from "../Header/SearchSection/Filter/ReasultSearch/ReasultSearch";
 
 function Mainpage() {
   const navigate = useNavigate();
@@ -19,12 +20,11 @@ function Mainpage() {
         <SearchSection/>
         <LandList/>
         <Advisors/>
-       <div style={{display: "flex",justifyContent: "center"}}>
-           <button id="Post" style={{background:"#28a745", margin: "52px"}} onClick={gotoContactForm}>Post your land</button>
-       </div>
-        {/* <ContactForm/> */}
+        <div style={{display: "flex",justifyContent: "center"}}>
+            <button id="Post" style={{background:"#28a745", margin: "52px"}} onClick={gotoContactForm}>Post your land</button>
+        </div>
+        <ReasultSearch/>
         <Footer/>
-        {/* <Cover/> */}
     </>
   )
 }

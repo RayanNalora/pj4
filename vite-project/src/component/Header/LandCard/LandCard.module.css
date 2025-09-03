@@ -29,6 +29,7 @@
     overflow: hidden;
     padding: 12px;
     min-width: 300px;
+    width: 400px;
   }
   
   .content h3 {

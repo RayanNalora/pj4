@@ -48,11 +48,11 @@ const LandInfo = () => {
         {/* About land */}
         <div className="card">
           <p className="headercard">About land:</p>
-          <p>Rain rate:</p>
+          <p>Rain rate:{land.ratingsAverage}</p>
           <p>Climate situation: sometimes rainy and sometimes dry</p>
-          <p>What you can plant: Apple trees, Tomatoes, Avocado, Olives</p>
-          <p>Irrigation way: Rain irrigation</p>
-          <p>Soil kind: {land.soilTyypes}</p>
+          <p>What you can plant: {land.suitableCrops}</p>
+          <p>Irrigation way: {land.irrigationfall}</p>
+          <p>Soil kind: {land.soilTypes}</p>
         </div>
 
       </div>

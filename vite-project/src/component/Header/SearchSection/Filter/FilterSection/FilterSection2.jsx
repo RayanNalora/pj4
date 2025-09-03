@@ -162,10 +162,13 @@ const [sortOption, setSortOption] = useState("");
             <option value="area-asc">Ascending order by area </option>
           </select>
         </div>
-        {filteredLands.map(property => (
+        {filteredLands.map((property) => (
           <div key={property.id} className="property-item">
             <div className="property-image">
-              <img src="/lands/p1.jpg"  />
+              {/* <img src="/lands/p1.jpg"  /> */}
+              {property.landMedia?.map((media,i)=> (
+                  <img key={i} src={media} alt={`Media ${i+1}`} />
+                ))}
             </div>
             
             <div className="property-details">
