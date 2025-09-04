@@ -28,7 +28,7 @@ export default function SearchSection() {
         <input type="text" placeholder="Search here" value={searchTerm} onChange={(e) =>
                                                                       setSearchTerm(e.target.value)} className="search-input" />
         <button className="filter-button" onClick={handleSearch}>Search</button>
-        {/* <FaSearch className="search-icon" /> */}
+      
       </div>
       <button className="filter-button" onClick={goToFilter}>Filter</button>
      

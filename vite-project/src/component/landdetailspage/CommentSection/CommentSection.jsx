@@ -39,46 +39,47 @@ export default function CommentSection() {
   };
 
   return (
-    <div className="comment-container">
-      <div className="add-comment">
-        <textarea
-          placeholder="Add your comment:"
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-        />
-        <div className="rating">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              onClick={() => setRating(star)}
-              className={star <= rating ? 'star filled' : 'star'}
-            >
-              ★
-            </span>
-          ))}
-        </div>
-        <button className='post' onClick={handlePost}>Post</button>
-      </div>
-      {comments.map((c, index) => (
-        <div className="comment" key={index}>
-          <div className="comment-header">
-              <div style={{    display: "flex",alignItems: "center"}}>
-                    <span className="user-icon">👤</span>
-                    <p style={{ marginBottom:"-9px",fontSize:"20px"}}>{c.name}</p>
-             </div>
-            <p className="date">{c.date}</p>
-          </div>
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className={i < c.stars ? 'star filled' : 'star'}>
-                ★
-              </span>
-            ))}
-          </div>
-          <p className="comment-text">{c.comment}</p>
-        </div>
+    <></>
+    // <div className="comment-container">
+    //   <div className="add-comment">
+    //     <textarea
+    //       placeholder="Add your comment:"
+    //       value={newComment}
+    //       onChange={(e) => setNewComment(e.target.value)}
+    //     />
+    //     <div className="rating">
+    //       {[1, 2, 3, 4, 5].map((star) => (
+    //         <span
+    //           key={star}
+    //           onClick={() => setRating(star)}
+    //           className={star <= rating ? 'star filled' : 'star'}
+    //         >
+    //           ★
+    //         </span>
+    //       ))}
+    //     </div>
+    //     <button className='post' onClick={handlePost}>Post</button>
+    //   </div>
+    //   {comments.map((c, index) => (
+    //     <div className="comment" key={index}>
+    //       <div className="comment-header">
+    //           <div style={{    display: "flex",alignItems: "center"}}>
+    //                 <span className="user-icon">👤</span>
+    //                 <p style={{ marginBottom:"-9px",fontSize:"20px"}}>{c.name}</p>
+    //          </div>
+    //         <p className="date">{c.date}</p>
+    //       </div>
+    //       <div className="stars">
+    //         {[...Array(5)].map((_, i) => (
+    //           <span key={i} className={i < c.stars ? 'star filled' : 'star'}>
+    //             ★
+    //           </span>
+    //         ))}
+    //       </div>
+    //       <p className="comment-text">{c.comment}</p>
+    //     </div>
         
-      ))}
-    </div>
+    //   ))}
+    // </div>
   );
 }

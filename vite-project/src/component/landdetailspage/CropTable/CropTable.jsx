@@ -51,34 +51,35 @@ const cropData = [
 
 const CropTable = () => {
   return (
-    <div className="table-container">
-      <table className="crop-table">
-        <thead>
-          <tr>
-            <th>Season</th>
-            <th>Crop</th>
-            <th>Production</th>
-            <th>Investor Contact</th>
-            <th>Problems</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cropData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.season}</td>
-              <td>{item.crop}</td>
-              <td>{item.production}</td>
-              <td className="email">{item.investor}</td>
-              <td>{item.problems}</td>
-              <td>{item.start}</td>
-              <td>{item.end}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <></>
+    // <div className="table-container">
+    //   <table className="crop-table">
+    //     <thead>
+    //       <tr>
+    //         <th>Season</th>
+    //         <th>Crop</th>
+    //         <th>Production</th>
+    //         <th>Investor Contact</th>
+    //         <th>Problems</th>
+    //         <th>Start Date</th>
+    //         <th>End Date</th>
+    //       </tr>
+    //     </thead>
+    //     <tbody>
+    //       {cropData.map((item, index) => (
+    //         <tr key={index}>
+    //           <td>{item.season}</td>
+    //           <td>{item.crop}</td>
+    //           <td>{item.production}</td>
+    //           <td className="email">{item.investor}</td>
+    //           <td>{item.problems}</td>
+    //           <td>{item.start}</td>
+    //           <td>{item.end}</td>
+    //         </tr>
+    //       ))}
+    //     </tbody>
+    //   </table>
+    // </div>
   );
 };
 

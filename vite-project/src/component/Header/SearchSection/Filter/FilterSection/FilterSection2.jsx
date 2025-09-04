@@ -56,17 +56,17 @@ const [sortOption, setSortOption] = useState("");
     if (space) {
       results = results.filter(l => typeof l.area === "number");
       switch(space){
-        case "less-1": results = results.filter(l => l.area < 1); break;
-        case "1-5": results = results.filter(l => l.area >= 1 && l.area < 5); break;
-        case "5-10": results = results.filter(l => l.area >= 5 && l.area < 10); break;
-        case "10-50": results = results.filter(l => l.area >= 10 && l.area < 50); break;
-        case "more-50": results = results.filter(l => l.area > 50); break;
+        case "less-1dunams": results = results.filter(l => l.area < 1); break;
+        case "1-5dunams": results = results.filter(l => l.area >= 1 && l.area < 5); break;
+        case "5-10dunams": results = results.filter(l => l.area >= 5 && l.area < 10); break;
+        case "10-50dunams": results = results.filter(l => l.area >= 10 && l.area < 50); break;
+        case "more-50dunams": results = results.filter(l => l.area > 50); break;
         default: break;
       }
     }
 
     if (city) {
-      results = results.filter(l => l.location?.governorate?.toLowerCase() === city.toLowerCase());
+      results = results.filter(l => l.city?.toLowerCase() === city.toLowerCase());
     }
 
     // فلترة القرية
