@@ -23,7 +23,7 @@ function Mainpage() {
         <div style={{display: "flex",justifyContent: "center"}}>
             <button id="Post" style={{background:"#28a745", margin: "52px"}} onClick={gotoContactForm}>Post your land</button>
         </div>
-        <ReasultSearch/>
+        {/* <ReasultSearch/> */}
         <Footer/>
     </>
   )

@@ -82,6 +82,9 @@ const Landgallery = () => {
       {landImages.map((src, idx) => (
           <div className="image-card" key={idx}>
             <img src={src} alt={`Land ${idx + 1}`} />
+            {/* {land.landMedia?.map((media,i)=> (
+                  <img key={i} src={media} alt={`Media ${i+1}`} className={styles.image}/>
+                ))} */}
           </div>
         ))}
       </div>
@@ -127,34 +130,35 @@ const Landgallery = () => {
       </div>
     </div>
 
-    {/* <div className="table-container">
+    <div className="table-container">
       <table className="crop-table">
         <thead>
           <tr>
             <th>Season</th>
             <th>Crop</th>
             <th>Production</th>
-            <th>Investor Contact</th>
+            {/* <th>Investor Contact</th> */}
             <th>Problems</th>
             <th>Start Date</th>
             <th>End Date</th>
           </tr>
         </thead>
         <tbody>
-          {cropData.map((item, index) => (
-            <tr key={index}>
+          {/* {cropData.map((item, index) => (
+            <tr key={index}> */}
+            <tr>
               <td>{detials.season}</td>
               <td>{detials.crop}</td>
               <td>{detials.production}</td>
-              <td className="email">{item.investor}</td>
+              {/* <td className="email">{item.investor}</td> */}
               <td>{detials.problems}</td>
-              <td>{detials.start}</td>
-              <td>{detials.end}</td>
+              <td>{detials.startDate}</td>
+              <td>{detials.endDate}</td>
             </tr>
-          ))}
+           {/* ))} */}
         </tbody>
       </table>
-    </div> */}
+    </div>
 
 <div className="contact-container-card">
       <div className="contact-card">
@@ -181,8 +185,8 @@ const Landgallery = () => {
       </div>
       </div>
     </div>
-
-    <div className="comment-container">
+    <CommentSection/>
+    {/* <div className="comment-container">
       <div className="add-comment">
         <textarea
           placeholder="Add your comment:"
@@ -222,7 +226,7 @@ const Landgallery = () => {
         </div>
         
       ))}
-    </div>
+    </div> */}
     <Footer/>
     {/* <LandInfo/>
     

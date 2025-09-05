@@ -42,6 +42,7 @@ function App() {
             <Route path="/Property_consulting" element={<Property_consulting/>} />
             <Route path="/Property_management" element={<Property_management/>} />
             <Route path="/Terms_of_service" element={<Terms_of_service/>} />
+            <Route path="/ReasultSearch/:term" element={<ReasultSearch/>} />
 
            </Routes>
          </Router>

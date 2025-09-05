@@ -3,6 +3,7 @@ import './ReasultSearch.css';
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Header from '../../../Header';
 
 
 const ReasultSearch = () => {
@@ -29,18 +30,23 @@ useEffect (() => {
 
   fetchLands() ; 
 },[]);
-  
-// useEffect (() => {
-//   const filtered = lands.filter(
-//     (land)=> 
-//       land.city?.toUpperCase().includes(term.toUpperCase()) 
-//   );
-//     setFilteredLands(filtered);
-// },[lands,term]);
+useEffect(() => {
+  if(term){
+    const filtered = lands.filter((land)=> 
+      land.city.toLowerCase().includes(term.toLowerCase())
+    //  ||
+    //   land.village.toLowerCase().includes(term.toLowerCase())
+    );
+    setFilteredLands(filtered);
+  }else{
+    setFilteredLands(lands);
+  }
+},[lands,term]);
 
   return(
   <>
-      {lands.map(property => (
+  <Header/>
+      {filteredLands.map(property => (
           <div key={property.id} className="property-item1">
             <div className="property-image1">
             {property.landMedia?.map((media,i)=> (

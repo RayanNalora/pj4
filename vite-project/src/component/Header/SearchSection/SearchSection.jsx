@@ -20,7 +20,7 @@ export default function SearchSection() {
   }
   const handleSearch = () => {
     if(!searchTerm.trim()) return;
-    navigate('/ReasultSearch/${searchTerm.trim()}');
+    navigate(`/ReasultSearch/${searchTerm.trim()}`);
   }
   return (
     <div className="search-section">

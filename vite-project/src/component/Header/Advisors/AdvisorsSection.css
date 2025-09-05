@@ -22,7 +22,6 @@
 .advisor-card {
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   background-color: #ffffff;
   transition: transform 0.4s ease;
 
