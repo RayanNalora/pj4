@@ -29,7 +29,7 @@ const [sortOption, setSortOption] = useState("");
   }, []);
   
   const Citys = [
-        "Idlib","Daraa","Hama","Homs","Aleppo"
+        "Damascus","Daraa","Hama","Homs","Aleppo","Deir ez-Zor","Tartus","Latakia","Raqqa","Idlib"
       ]
 
   // عرض جميع العقارات عند تحميل الصفحة
@@ -120,7 +120,30 @@ const [sortOption, setSortOption] = useState("");
           
           <select value={village} onChange={(e) => setVillage(e.target.value)}>
             <option value="">Village</option>
-            {["Ariha", "Saraqib", "Kafr Zita", "Al-Lataminah", "Al-Rastan", "Talbiseh", "Al-Bab", "Azaz", "Bosra al-Sham", "Tafas"].map(v => (
+            {["Al-Mazraa", "Ariqa", "Qanawat", "Al-Salkhad", "Al-Shahba", "Al-Hirak", "Nawa", "Tafas", "Izra", "Busra al-Sham" ,
+              "Al-Mayadin","kamal","Al-Kasra","Al-Tabni","Al-Suwar", "Baniyas","Safita","Dreikish","Al-Hamidiyah","Sheikh Badr",
+              "Qardaha","Jableh","Al-Haffah","Salibeh","Kasab","Maarat al-Numan","Saraqib","Binnish","Kafranbel","Jisr al-Shughur",
+              "Al-Qusayr",
+              "Al-Rastan",
+              "Talbiseh",
+              "Al-Qaryatayn",
+              "Palmyra",
+              "Taybat al-Imam",
+              "Suran",
+              "Masyaf",
+              "Karnaz",
+              "Kafr Zita",
+              "Al-Bab",
+              "Azaz",
+              "Afrin",
+              "Manbij",
+              "Jarabulus", "Douma",
+              "Darayya",
+              "Al-Tall",
+              "Al-Zabadani",
+              "Yabroud",
+
+            ].map(v => (
               <option key={v} value={v}>{v}</option>
             ))}
           </select>

@@ -68,3 +68,7 @@ section {
   }
 }
 
+.imagetofram img{
+  margin-top: 60px;
+  width: 100%;
+}

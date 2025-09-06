@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import Header from '../Header/Header';
 import "./LandGallery.css"; // تأكد من ربط ملف CSS
 import LandInfo from '../landdetailspage/LandInfo/LandInfo';
@@ -11,6 +11,7 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 const Landgallery = () => { 
   const [detials,setdetials] = useState({})
+  const [table,settable] = useState([])
   let { id } = useParams();
 
 
@@ -21,6 +22,17 @@ const Landgallery = () => {
       setdetials(res.data.data.land);
     })
   },[id])
+
+  // useEffect (()=> { 
+  //   axios.get(`/api/histories/land/${id}`)
+  //   .then(res => {
+  //     console.log("id = ",id);
+  //     console.log(res.data.data || [])
+  //     settable(res.data.data || []);
+  //   })
+  //   .catch(err => console.log("error:",err))
+  // },[id])
+
   const landImages = [
     "/public/landdetailspage/p1.jpg",
     "/public/landdetailspage/p2.jpg",
@@ -130,35 +142,7 @@ const Landgallery = () => {
       </div>
     </div>
 
-    <div className="table-container">
-      <table className="crop-table">
-        <thead>
-          <tr>
-            <th>Season</th>
-            <th>Crop</th>
-            <th>Production</th>
-            {/* <th>Investor Contact</th> */}
-            <th>Problems</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* {cropData.map((item, index) => (
-            <tr key={index}> */}
-            <tr>
-              <td>{detials.season}</td>
-              <td>{detials.crop}</td>
-              <td>{detials.production}</td>
-              {/* <td className="email">{item.investor}</td> */}
-              <td>{detials.problems}</td>
-              <td>{detials.startDate}</td>
-              <td>{detials.endDate}</td>
-            </tr>
-           {/* ))} */}
-        </tbody>
-      </table>
-    </div>
+    <CropTable/>
 
 <div className="contact-container-card">
       <div className="contact-card">
@@ -167,15 +151,20 @@ const Landgallery = () => {
           alt="Profile"
           className="profile-pic"
         />
-        <div className="info-card-details">
-          <div className='content'>
-            <h3><span className="icon"><img src='./public/lands/profile-circle.png' style={{width: "20px",height: "20px",marginBottom: "-3px"}}></img></span></h3>
+        {/* {detials.landMedia.userPhoto} */}
+        <div className="info-card-details1">
+          <div className='content1'>
+            <h3><span className="icon1"><img src='/lands/profile-circle.png' style={{width: "20px",height: "20px",marginBottom: "-3px"}}></img>
+             {detials.firstName}{detials.lastName}</span></h3>
             <p>
-              <span className="icon"><img src='./public/lands/phone_icon.png' style={{width:" 23px",marginBottom:"-4px"}}></img></span>
-              <a href="tel:+963944015895">{detials.areaCode}{detials.number}</a>
+              <span className="icon1"><img src='/lands/phone_icon.png' style={{width:" 23px",marginBottom:"-4px"}}></img></span>
+              {/* <a href="tel:+963944015895">
+                {detials.phone.areaCode}{detials.phone.number}</a> */}
             </p>
             <p>
-              <span className="icon"><img src="./public/lands/sms.png" alt="" style={{marginbBottom: "-6px",width: "21px"}} /></span>
+              <span className="icon1">
+                <img src="/lands/sms.png" alt="" style={{marginbBottom: "-6px",width: "21px"}} />
+                </span>
               <a href="mailto:taha@sy.com">{detials.email}</a>
             </p>
           </div>

@@ -5,29 +5,38 @@ import Footer from "../../Footer/Footer";
 import axios from "axios";
 
 export default function ContactForm() {
-
-
-
   const[firstName,setfirstName]=useState('')
+  const [Message,setMessage] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData =new FormData();
     formData.append('firstName',firstName);
-    formData.append('lastName',lastName);
-    formData.append('gender',gender);
-    formData.append('email',email);
-    formData.append('city',city);
-    formData.append('yourPhoto',yourPhoto);
-    formData.append('title',title);
-    formData.append('area',area);
+    // formData.append('lastName',lastName);
+    // formData.append('gender',gender);
+    // formData.append('email',email);
+    // formData.append('city',city);
+    // formData.append('yourPhoto',yourPhoto);
+    // formData.append('title',title);
+    // formData.append('area',area);
 
+    // try{
+    //   const response = await axios.post("/api/v1/lands",formData,{
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data',
+    //     },
+    //   }).then(res => console.log(res.data));
+    // }catch(error){
+    //   setMessage('error'+error.message)
+    // }
     try{
-      const response = await axios.post(`/api/v1/lands/`,formData,{
+      const res = await axios.post("/api/v1/lands",formData,
+      { 
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-      }).then(res => console.log(res.data));
+      }
+    ).then(res => console.log(res.data));
     }catch(error){
       setMessage('error'+error.message)
     }
@@ -81,9 +90,16 @@ export default function ContactForm() {
 
   return (
     <>
+    <Header/>
+    <div className="imagetofram">
+      <img src="/lands/fram.png" ></img>
+    </div>
     <form onSubmit={handleSubmit}>
+    <br/><br/><br/><br/><br/><br/><br/>
      <label>name</label> <input
      type="text" value={firstName}   onChange={(e)=>{setfirstName(e.target.value)}}/><br/>
+     
+     {/* <label>name</label> <input/>
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/>
@@ -93,11 +109,10 @@ export default function ContactForm() {
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/>
-     <label>name</label> <input/><br/>
-     <label>name</label> <input/><br/>
-     <button type="submit">submit</button>
+     <label>name</label> <input/><br/> */}
+     <button type="submit" >submit</button>
     </form>
-    {/* <Header/>
+    {/* 
     <div className="max-w-5xl mx-auto p-6">
       <form onSubmit={handleSubmit} className="space-y-8"> */}
 

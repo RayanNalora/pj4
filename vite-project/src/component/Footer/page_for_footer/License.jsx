@@ -5,7 +5,7 @@ export default function License() {
   return (
    <>
    <Header/>
-    <h1 className="text-3xl font-bold mb-4">📄 License</h1>
+    <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>📄 License</h1>
       <p>
         All rights, trademarks, and software associated with this website are
         owned by the company.

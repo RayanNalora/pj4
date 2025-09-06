@@ -5,7 +5,7 @@ export default function Property_consulting() {
   return (
    <>
    <Header/>
-    <h1 className="text-3xl font-bold mb-4">🏠 Property Consulting</h1>
+    <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>🏠 Property Consulting</h1>
       <p className="mb-4">
         Our Property Consulting services are designed to help clients make
         informed decisions when buying, selling, or renting real estate. We

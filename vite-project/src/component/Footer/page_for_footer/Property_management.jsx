@@ -5,7 +5,7 @@ export default function Property_management() {
   return (
    <>
    <Header/>
-    <h1 className="text-3xl font-bold mb-4">🏢 Property Management</h1>
+    <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>🏢 Property Management</h1>
       <p>
         Our property management services cover everything from tenant relations
         to maintenance, ensuring your property value grows over time.

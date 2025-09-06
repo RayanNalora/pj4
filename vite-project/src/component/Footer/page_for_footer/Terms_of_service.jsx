@@ -5,7 +5,7 @@ export default function Terms_of_service() {
   return (
    <>
    <Header/>
-      <h1 className="text-3xl font-bold mb-4">📜 Terms of Service</h1>
+      <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>📜 Terms of Service</h1>
       <p>
         Welcome to our website. By using our services, you agree to comply with
         the following terms:

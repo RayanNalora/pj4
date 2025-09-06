@@ -5,7 +5,7 @@ export default function Legal_services() {
     return (
       <div>
         <Header/>
-        <h1 className="text-3xl font-bold mb-4">⚖️ Legal Services</h1>
+        <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>⚖️ Legal Services</h1>
         <p>
           Our legal team provides comprehensive support for your real estate
           transactions, including:

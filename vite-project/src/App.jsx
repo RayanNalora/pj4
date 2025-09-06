@@ -20,7 +20,8 @@ import Private_policy from "./component/Footer/page_for_footer/Private_policy.js
 import License from "./component/Footer/page_for_footer/License.jsx";
 import Legal_services from "./component/Footer/page_for_footer/Legal_services.jsx";
 import Investment_management from "./component/Footer/page_for_footer/Investment_management.jsx";
-
+import Login from "./component/login/login.jsx";
+import Signup from "./component/Signup/Signup.jsx";
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
             <Route path="/Property_management" element={<Property_management/>} />
             <Route path="/Terms_of_service" element={<Terms_of_service/>} />
             <Route path="/ReasultSearch/:term" element={<ReasultSearch/>} />
+            <Route path="/Login" element={<Login/>} />
+            <Route path="/Signup" element={<Signup/>} />
 
            </Routes>
          </Router>

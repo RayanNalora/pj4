@@ -5,7 +5,7 @@ export default function Private_policy() {
   return (
    <>
    <Header/>
-     <h1 className="text-3xl font-bold mb-4">🔒 Privacy Policy</h1>
+     <h1 className="text-3xl font-bold mb-4" style={{paddingTop: "60px"}}>🔒 Privacy Policy</h1>
       <p>
         We respect your privacy and are committed to protecting your personal
         data. The information we collect is used only for service improvement.

@@ -5,6 +5,7 @@ export default function Investment_management() {
   return (
    <>
    <Header/>
+   <div style={{paddingTop: "60px"}}>
    <h1 className="text-3xl font-bold mb-4">💰 Investment Management</h1>
       <p>
         We help you create personalized investment strategies to achieve your
@@ -15,6 +16,7 @@ export default function Investment_management() {
         <li>Feasibility studies and market research.</li>
         <li>Portfolio management and optimization.</li>
       </ul>
+   </div>
    
    </>
   );

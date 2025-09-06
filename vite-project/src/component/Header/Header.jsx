@@ -7,6 +7,14 @@ const Header = () => {
   const goToHome = () => {
     navigate('/Mainpage');
   }
+  const goToSignin = () => {
+    navigate('/Login');
+  }
+  const goToSignup = () => {
+    navigate('/Signup');
+  }
+
+
   return (
     <header className="header">
       <div className="logo">
@@ -17,8 +25,8 @@ const Header = () => {
         {/* <a href="/details">Details</a> */}
         <a href="#Post">Post</a>
         <a href="#Footer">Footer</a>
-        <button className="btn signup">Sign up</button>
-        <button className="btn signin">Sign in</button>
+        <button className="btn signup" onClick={goToSignup}>Sign up</button>
+        <button className="btn signin" onClick={goToSignin}>Sign in</button>
       </nav>
     </header>
   );
