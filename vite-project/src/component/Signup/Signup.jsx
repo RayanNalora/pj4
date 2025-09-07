@@ -106,17 +106,29 @@ export default function Signup() {
         </div>
 
         <div className="tf">
-          <button type="submit" className="sign-welcome" onClick={goToHome}>Sign up</button>
+          <button type="submit" className="sign-welcome"
+          //  onClick={goToHome}
+           >Sign up</button>
+           <p className="or-welcome">or</p>
+          
+          <button type="submit" className="sign-welcome"onClick={goToHome}>Go to Home</button>
         </div>
-
         <div className="footer-form-welcome">
           <span>Already have an account?</span>
           <a href="#" onClick={goToSignin}>Sign in</a>
         </div>
-
-        {message && <p style={{ textAlign: "center", marginTop: "10px" }}>{message}</p>}
       </form>
     </div>
+    <div className="toat">
+        {message && <p style={{width: "42%",
+      height: "60px",
+      color: "black",
+      background:" #ffffff",
+      borderRadius: "15px",
+      marginLeft: "62px",
+      position: "relative",
+      bottom: "-42px"}}>{message}</p>}
+        </div>
   </div>
   );
 }

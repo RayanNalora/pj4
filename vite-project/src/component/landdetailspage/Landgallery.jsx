@@ -12,6 +12,7 @@ import { useState,useEffect } from "react";
 const Landgallery = () => { 
   const [detials,setdetials] = useState({})
   const [table,settable] = useState([])
+  const [landImages, setLandImages] = useState([]);
   let { id } = useParams();
 
 
@@ -20,6 +21,7 @@ const Landgallery = () => {
     .then(res => {
       console.log(res.data.data.land)
       setdetials(res.data.data.land);
+      setLandImages(res.data.data.land.landMedia); 
     })
   },[id])
 
@@ -33,18 +35,18 @@ const Landgallery = () => {
   //   .catch(err => console.log("error:",err))
   // },[id])
 
-  const landImages = [
-    "/public/landdetailspage/p1.jpg",
-    "/public/landdetailspage/p2.jpg",
-    "/public/landdetailspage/p3.jpg",
-    "/public/landdetailspage/p4.jpg",
-    "/public/landdetailspage/p5.jpg",
-    "/public/landdetailspage/p1.jpg",
-    "/public/landdetailspage/p2.jpg",
-    "/public/landdetailspage/p3.jpg",
-    "/public/landdetailspage/p4.jpg",
-    "/public/landdetailspage/p5.jpg",
-  ];
+  // const landImages = [
+  //   "/public/landdetailspage/p1.jpg",
+  //   "/public/landdetailspage/p2.jpg",
+  //   "/public/landdetailspage/p3.jpg",
+  //   "/public/landdetailspage/p4.jpg",
+  //   "/public/landdetailspage/p5.jpg",
+  //   "/public/landdetailspage/p1.jpg",
+  //   "/public/landdetailspage/p2.jpg",
+  //   "/public/landdetailspage/p3.jpg",
+  //   "/public/landdetailspage/p4.jpg",
+  //   "/public/landdetailspage/p5.jpg",
+  // ];
   const initialComments = [
     {
       name: 'Yaman Attar',
@@ -75,10 +77,10 @@ const Landgallery = () => {
       setRating(0);
     }
   };
+ 
   const [comments, setComments] = useState(initialComments);
   const [newComment, setNewComment] = useState('');
   const [rating, setRating] = useState(0);
-  
 
   return (
     <>
@@ -91,14 +93,22 @@ const Landgallery = () => {
        <img src='../public/lands/icon.png' style={{width: "20px"
                      , height: "20px" , margin: "auto  6px",marginBottom: "-4px"}}/>
       <div className="image-grid">
-      {landImages.map((src, idx) => (
-          <div className="image-card" key={idx}>
-            <img src={src} alt={`Land ${idx + 1}`} />
-            {/* {land.landMedia?.map((media,i)=> (
-                  <img key={i} src={media} alt={`Media ${i+1}`} className={styles.image}/>
-                ))} */}
-          </div>
-        ))}
+      {/* {landImages.map((src, idx) => (
+          <div className="image-card" key={idx}> */}
+
+        {landImages.length > 0 ? (
+            landImages.map((src, idx) => (
+              <div className="image-card" key={idx}>
+                <img src={src} alt={`Land ${idx + 1}`} />
+              </div>
+
+            ))
+          ) : (
+            <p>Loading images...</p>
+          )} 
+
+          {/* </div>
+        ))} */}
       </div>
     </div> 
    
@@ -147,7 +157,7 @@ const Landgallery = () => {
 <div className="contact-container-card">
       <div className="contact-card">
         <img
-          src="../public/Advisors/p5.jpg" // استبدله بالرابط الصحيح للصورة
+          src={detials.userPhoto} // استبدله بالرابط الصحيح للصورة
           alt="Profile"
           className="profile-pic"
         />
@@ -216,14 +226,7 @@ const Landgallery = () => {
         
       ))}
     </div> */}
-    <Footer/>
-    {/* <LandInfo/>
-    
-    <CropTable/>
-    <LandBookingCard/>
-    <CommentSection/>
-     */}
-  
+    <Footer/> 
     </>
   )
 }

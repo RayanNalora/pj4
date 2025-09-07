@@ -30,7 +30,8 @@
       padding: 10px;
     }
  
-    .welcome .form-welcome-f div .sign-welcome{
+    .welcome .form-welcome-f div .sign-welcome,
+    .sign-welcome{
        background: #338b37;
        border: none;
  
@@ -66,6 +67,25 @@
      align-items: center;
     }
     
+   .sign-welcome{
+      background: #338b37;
+      border: none;
+
+   }
+  .or-welcome{
+    text-align: center;
+   }
+
+   /* .toat{
+      width: 42%;
+      height: 60px;
+      color: black;
+      background: #ffffff;
+      border-radius: 15px;
+      margin-left: 62px;
+      position: relative;
+      bottom: -42px;
+   } */
 
     @media (max-width:700px){
         .welcom-container{

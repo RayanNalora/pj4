@@ -41,12 +41,10 @@ const CropTable = () => {
             <td>{item.production}</td>
             {/* <td className="email">{item.investor}</td> */}
             <td>{item.problems}</td>
-            <td>{item.startDate ? new
-            Date(item.startDate).toLocaleDateString() :""}</td>
-            <td>{item.endDate ? new
-            Date(item.endDate).toLocaleDateString() :""}</td>
+            <td>{item.startDate ? new Date(item.startDate).toLocaleDateString() :""}</td>
+            <td>{item.endDate ? new Date(item.endDate).toLocaleDateString() :""}</td>
           </tr>
-          ))}
+          ))} 
       </tbody>
     </table>
   </div>

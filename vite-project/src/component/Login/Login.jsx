@@ -29,15 +29,19 @@ export default function Login() {
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
         setMessage("✅ Login successful!");
+        console.log("✅ Login successful!");
       } else {
+        console.log("❌ Login failed: " + (res.data.message || "Invalid credentials"));
         setMessage("❌ Login failed: " + (res.data.message || "Invalid credentials"));
       }
     } catch (err) {
       if (err.response) {
         // السيرفر رد بكود خطأ
+        console.log(`❌ Error ${err.response.status}: ${err.response.data.message || "Unauthorized"}`);
         setMessage(`❌ Error ${err.response.status}: ${err.response.data.message || "Unauthorized"}`);
       } else {
         // مشكلة بالاتصال
+        console.log("❌ Network error, check your backend URL");
         setMessage("❌ Network error, check your backend URL");
       }
     }
@@ -86,7 +90,9 @@ export default function Login() {
 
         <div className="tf">
           <label>Did you forget your password?</label> <br/>
-          <button type="submit" className="sign-welcome" onClick={goToHome}>Sign in</button>
+          <button type="submit" className="sign-welcome"
+          //  onClick={goToHome}
+           >Sign in</button>
 
           <p className="or-welcome">or</p>
 
@@ -99,6 +105,10 @@ export default function Login() {
             </svg> */}
             Sign in with Google
           </button>
+
+          <p className="or-welcome">or</p>
+
+          <button type="submit" className="sign-welcome"onClick={goToHome}>Go to Home</button>
         </div>
 
         <div className="footer-form-welcome">
@@ -106,8 +116,19 @@ export default function Login() {
           <a href="#" onClick={goToSignup}>Sign up</a>
         </div>
 
-        {message && <p style={{ textAlign: "center", marginTop: "10px" }}>{message}</p>}
-      </form>
+ <div className="toat">
+ {message && <p style={{width: "42%",
+      height: "60px",
+      color: "black",
+      background: "rgb(255 255 255 / 58%)",
+      borderRadius:" 5px",
+      marginLeft:"180px",
+      position: "relative",
+      bottom: "-42px",
+      textAlign: "center",
+      padding: "10px"}}>{message}</p>}
+
+        </div>      </form>
     </div>
   </div>
   );
