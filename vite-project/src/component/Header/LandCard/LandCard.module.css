@@ -60,6 +60,37 @@
     cursor: pointer;
   }
 
+  @keyframes flashing{
+    50%{
+      opacity: 0.3;
+      background: #02702e;
+      /* background: #eee;
+      width: 200%;
+      height: 200%; */
+    }
+    100%,0%{
+      opacity: 1;
+      background:var(--main_color);
+      /* background-color: #eee;
+      width: 0px;
+      height: 0px; */
+    }
+  }
+
+  .footer button{
+    /* width: 0px;
+    height: 0px ;
+    top: 50%;
+    left: 50%;
+    transform: translate((-50%,-50%)); */
+    /* position: absolute; */
+    opacity: 0px;
+    transition-delay: 2s;
+    z-index: 1111111;
+    background: var(--main_color);
+    animation: flashing 2s infinite;
+  }
+
   .con-land{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

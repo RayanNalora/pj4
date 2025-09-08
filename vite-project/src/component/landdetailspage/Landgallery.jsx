@@ -137,15 +137,19 @@ const Landgallery = () => {
           <p className="headercard">Logesties:</p>
           <p>Workers number: {detials.workersNumber}</p>
           <p>Equipments: {detials.equipments}</p>
+          <div>{detials.village}</div>
         </div>
+      
+
+        
 
         {/* About land */}
         <div className="card">
           <p className="headercard">About land:</p>
-          <p>Rain rate:{detials.ratingsAverage}</p>
-          <p>Climate situation: sometimes rainy and sometimes dry</p>
+          <p>Rain rate: {detials.ratingsAverage}</p>
+          <p>Climate situation: {detials.climateDescription}</p>
           <p>What you can plant: {detials.suitableCrops}</p>
-          <p>Irrigation way: {detials.irrigationfall}</p>
+          <p>Irrigation way: {detials.irrigationMethods}</p>
           <p>Soil kind: {detials.soilTypes}</p>
         </div>
 
@@ -161,7 +165,7 @@ const Landgallery = () => {
           alt="Profile"
           className="profile-pic"
         />
-        {/* {detials.landMedia.userPhoto} */}
+        {/* {detials.landMedia.ownershipPhoto} */}
         <div className="info-card-details1">
           <div className='content1'>
             <h3><span className="icon1"><img src='/lands/profile-circle.png' style={{width: "20px",height: "20px",marginBottom: "-3px"}}></img>

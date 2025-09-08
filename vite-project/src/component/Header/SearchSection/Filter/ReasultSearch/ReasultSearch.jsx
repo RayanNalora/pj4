@@ -34,8 +34,8 @@ useEffect(() => {
   if(term){
     const filtered = lands.filter((land)=> 
       land.city.toLowerCase().includes(term.toLowerCase())
-    //  ||
-    //   land.village.toLowerCase().includes(term.toLowerCase())
+     ||
+      land.location.village.toLowerCase().includes(term.toLowerCase())
     );
     setFilteredLands(filtered);
   }else{
