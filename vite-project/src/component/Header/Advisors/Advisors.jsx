@@ -73,7 +73,11 @@ export default function AdvisorsSection() {
                   <div style={{display:"flex",justifyContent: "center"}}>
                   <img src="../public/lands/phone_icon.png" className="phone_icon"/> <a className="advisor-phone">{advisor.phone}</a>
                   </div>
+                  <div style={{display:"flex",justifyContent: "center"}}>
+                  <img src="/lands/sms.png" className="phone_icon"/>
                   <a className="advisor-email">{advisor.email}</a>
+                  </div>
+                
                 </div>
           </div>
         ))}

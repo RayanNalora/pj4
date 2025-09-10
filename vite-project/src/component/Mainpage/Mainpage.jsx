@@ -22,10 +22,10 @@ function Mainpage() {
         <SearchSection/>
         <LandList/>
         <Advisors/>
-        <div className="imagetofram" style={{position: "relative"}}>
-           <img src="/lands/Frame 89.png"></img>
-           <div style={{display: "flex",justifyContent: "center",marginBottom: "-2px",position: "absolute",top: "150px",transform: "translateX(-50%)",left: "50%"}}>
-              <button id="Post" style={{background:"#28a745", margin: "52px"}} onClick={gotoContactForm}>Post your land</button>
+        <div className="imagetofram" style={{position: "relative",marginBottom: "61px"}}>
+           <img src="/lands/fram.png"></img>
+           <div style={{ marginBottom:"30px",display: "flex",justifyContent: "center",marginBottom: "-2px",position: "absolute",top: "150px",transform: "translateX(-50%)",left: "50%"}}>
+              <button id="Post" style={{background:"#28a745", margin: "120px"}} onClick={gotoContactForm}>Post your land</button>
            </div>
         </div>
        

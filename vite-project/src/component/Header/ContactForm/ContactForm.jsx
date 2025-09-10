@@ -8,10 +8,10 @@ export default function ContactForm() {
   const[firstName,setfirstName]=useState('')
   const [Message,setMessage] = useState('')
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData =new FormData();
-    formData.append('firstName',firstName);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const formData =new FormData();
+  //   formData.append('firstName',firstName);
     // formData.append('lastName',lastName);
     // formData.append('gender',gender);
     // formData.append('email',email);
@@ -29,64 +29,64 @@ export default function ContactForm() {
     // }catch(error){
     //   setMessage('error'+error.message)
     // }
-    try{
-      const res = await axios.post("/api/v1/lands",formData,
-      { 
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      }
-    ).then(res => console.log(res.data));
-    }catch(error){
-      setMessage('error'+error.message)
-    }
-  };
-  
-  // const [formData, setFormData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   gender: "",
-  //   email: "",
-  //   phoneCode: "",
-  //   phoneNumber: "",
-  //   city: "",
-  //   yourPhoto: null,
-  //   idPhoto: null,
-  //   ownershipPhoto: null,
-  //   title: "",
-  //   area: "",
-  //   price: "",
-  //   crop: "",
-  //   treeAge: "",
-  //   workers: "",
-  //   equipment: "",
-  //   rainRate: "",
-  //   waterSource: "",
-  //   irrigationWay: "",
-  //   temperatureRate: "",
-  //   climate: "",
-  //   soil: "",
-  //   suitableCrops: "",
-  //   returns: "",
-  //   contractDuration: "",
-  //   description: "",
-  //   landMedia: null
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value, files } = e.target;
-  //   if (files) {
-  //     setFormData({ ...formData, [name]: files[0] });
-  //   } else {
-  //     setFormData({ ...formData, [name]: value });
+  //   try{
+  //     const res = await axios.post("/api/v1/lands",formData,
+  //     { 
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     }
+  //   ).then(res => console.log(res.data));
+  //   }catch(error){
+  //     setMessage('error'+error.message)
   //   }
   // };
+  
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    email: "",
+    phoneCode: "",
+    phoneNumber: "",
+    city: "",
+    yourPhoto: null,
+    idPhoto: null,
+    ownershipPhoto: null,
+    title: "",
+    area: "",
+    price: "",
+    crop: "",
+    treeAge: "",
+    workers: "",
+    equipment: "",
+    rainRate: "",
+    waterSource: "",
+    irrigationWay: "",
+    temperatureRate: "",
+    climate: "",
+    soil: "",
+    suitableCrops: "",
+    returns: "",
+    contractDuration: "",
+    description: "",
+    landMedia: null
+  });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-  //   alert("Form submitted!");
-  // };
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (files) {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    alert("Form submitted!");
+  };
 
   return (
     <>
@@ -94,10 +94,10 @@ export default function ContactForm() {
     <div className="imagetofram">
       <img src="/lands/fram.png" ></img>
     </div>
-    <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}>
     <br/><br/><br/><br/><br/><br/><br/>
      <label>name</label> <input
-     type="text" value={firstName}   onChange={(e)=>{setfirstName(e.target.value)}}/><br/>
+     type="text" value={firstName}   onChange={(e)=>{setfirstName(e.target.value)}}/><br/> */}
      
      {/* <label>name</label> <input/>
      <label>name</label> <input/><br/>
@@ -110,14 +110,14 @@ export default function ContactForm() {
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/>
      <label>name</label> <input/><br/> */}
-     <button type="submit" >submit</button>
-    </form>
-    {/* 
+     {/* <button type="submit" >submit</button>
+    </form> */}
+    
     <div className="max-w-5xl mx-auto p-6">
-      <form onSubmit={handleSubmit} className="space-y-8"> */}
+      <form onSubmit={handleSubmit} className="space-y-8"> 
 
         {/* Your Info */}
-        {/* <section>
+         <section>
           <h2 className="text-xl font-bold mb-4">Your info</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
            <div>
@@ -141,12 +141,12 @@ export default function ContactForm() {
             <div>
               <label>Email</label>
               <input type="email" name="email" placeholder="Email" onChange={handleChange} className="border p-2" />
-            </div>     */}
-            {/* <div>
+            </div>     
+            <div>
               <label>Phone Code</label>
               <input name="phoneCode" placeholder="Area code" onChange={handleChange} className="border p-2" />
-            </div>        */}
-            {/* <div>
+            </div>        
+             <div>
               <label>Phone Number</label>
             <input name="phoneNumber" placeholder="The number" onChange={handleChange} className="border p-2" />
             </div>
@@ -168,10 +168,10 @@ export default function ContactForm() {
               <input type="file" name="ownershipPhoto" onChange={handleChange} className="border p-2" />
             </div>
           </div>
-        </section> */}
+        </section> 
 
-        {/* <h2 className="text-xl font-bold mb-4">Your land info</h2> */}
-        {/* <section>
+         <h2 className="text-xl font-bold mb-4">Your land info</h2> 
+         <section>
           <h2 className="text-xl font-bold mb-4">Your land info</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -224,17 +224,17 @@ export default function ContactForm() {
             <div><label>Description</label><textarea name="description" placeholder="Description" onChange={handleChange} className="border p-2 col-span-2" /></div>
             <div> <label>Photos and vedieos for the land</label><input placeholder="Browse land photos and vedio  " type="file" name="landMedia" onChange={handleChange} className="border p-2 col-span-2" /></div>
           </div>
-        </section> */}
+        </section> 
 
-        {/* Submit Button */}
-        {/* <div className="flex justify-center">
+        Submit Button
+         <div className="flex justify-center">
           <button type="submit" className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
             Post your land!
           </button>
         </div>
       </form>
     </div>
-    <Footer/> */}
+    <Footer/>
     </>
   );
 }
